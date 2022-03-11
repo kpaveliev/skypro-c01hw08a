@@ -1,12 +1,11 @@
 # SkyPro.Python course
-## Homework 10.Flask
+## Homework 08*.Classes
 
 **Files**
-1. main.py - main program, displays several pages
-2. class_.py - Candidate() class definition
-3. utils.py - functions
-4. candidates.json - file with candidates to display
+1. 01_dice.py - task 1
+2. 02_hero.py - task 2
 
-Kirill Paveliev\
+
+Kirill Paveliev
 March 2022
 
