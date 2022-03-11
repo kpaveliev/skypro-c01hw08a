@@ -1,55 +1,55 @@
+from math import log, ceil
 
-class Hero():
+class Hero:
 
-    def __init__(self, name, health=100, experience=0, level=1):
+    def __init__(self, name, experience=0):
 
         self.name = name
-        self.health = health
         self.experience = experience
-        self.level = level
+        self.level = self.get_level()
+        self.health = self.get_health()
 
     def add_experience(self, exp_):
-
-        levels = {
-            1: {'experience': 15, 'health': 100},
-            2: {'experience': 30, 'health': 150},
-            3: {'experience': 60, 'health': 230},
-            4: {'experience': 120, 'health': 350},
-            5: {'experience': 240, 'health': 530},
-            6: {'experience': 480, 'health': 800},
-            7: {'experience': 960, 'health': 1_200}
-        }
-
         self.experience += exp_
-
-        for key, values in levels.items():
-            if exp_ in range(values['experience']):
-                self.level = key
-                self.health = values['health']
-                break
+        self.get_level()
 
     def get_level(self):
+        if self.experience >= 15:
+            self.level = int(log(self.experience / 15, 2)) + 2
+        else:
+            self.level = 1
         return self.level
 
     def get_health(self):
+        self.health = 100
+        for i in range(1, self.level):
+            self.health = ceil(self.health * 0.15) * 10
         return self.health
 
+    def __repr__(self):
+        return f'Имя: {self.name}\n' + \
+               f'Опыт: {self.experience}\n' + \
+               f'Уровень: {self.level}\n' + \
+               f'Здоровье: {self.health}\n'
 
+# Testing
 hero_1 = Hero('Hero1')
+print(hero_1)
 
+print()
 hero_1.add_experience(10)
 print(hero_1.experience)
 print(hero_1.get_level())
 print(hero_1.get_health())
 
-
+print()
 hero_1.add_experience(15)
 print(hero_1.experience)
 print(hero_1.get_level())
 print(hero_1.get_health())
 
-
-hero_1.add_experience(50)
+print()
+hero_1.add_experience(15)
 print(hero_1.experience)
 print(hero_1.get_level())
 print(hero_1.get_health())
