@@ -33,23 +33,24 @@ class Hero:
                f'Здоровье: {self.health}\n'
 
 # Testing
-hero_1 = Hero('Hero1')
-print(hero_1)
+if __name__ == '__main__':
+    hero_1 = Hero('Hero1')
+    print(hero_1)
 
-print()
-hero_1.add_experience(10)
-print(hero_1.experience)
-print(hero_1.get_level())
-print(hero_1.get_health())
+    print()
+    hero_1.add_experience(10)
+    print(hero_1.experience)
+    print(hero_1.get_level())
+    print(hero_1.get_health())
 
-print()
-hero_1.add_experience(15)
-print(hero_1.experience)
-print(hero_1.get_level())
-print(hero_1.get_health())
+    print()
+    hero_1.add_experience(15)
+    print(hero_1.experience)
+    print(hero_1.get_level())
+    print(hero_1.get_health())
 
-print()
-hero_1.add_experience(15)
-print(hero_1.experience)
-print(hero_1.get_level())
-print(hero_1.get_health())
+    print()
+    hero_1.add_experience(15)
+    print(hero_1.experience)
+    print(hero_1.get_level())
+    print(hero_1.get_health())

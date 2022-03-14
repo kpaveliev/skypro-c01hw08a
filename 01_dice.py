@@ -4,9 +4,9 @@ import random
 # Class
 class Dice():
 
-    def __init__(self, edges, history=[]):
+    def __init__(self, edges):
         self.edges = edges
-        self.history = history
+        self.history = []
 
     def dice_throw(self):
         number = random.randrange(1, self.edges+1)
@@ -17,13 +17,14 @@ class Dice():
         len_ = len(self.history)
         return ', '.join(self.history[len_-last_throws:])
 
-# Tests
 
-dice_4 = Dice(4)
+# Testing
+if __name__ == '__main__':
+    dice_4 = Dice(4)
 
-print(dice_4.dice_throw())
-print(dice_4.dice_throw())
-print(dice_4.dice_throw())
-print(dice_4.dice_throw())
+    print(dice_4.dice_throw())
+    print(dice_4.dice_throw())
+    print(dice_4.dice_throw())
+    print(dice_4.dice_throw())
 
-print(dice_4.get_history(4))
+    print(dice_4.get_history(4))
