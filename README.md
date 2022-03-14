@@ -9,6 +9,6 @@
 5. 05_coins.py - coins conversion
 
 
-Kirill Paveliev
+Kirill Paveliev \
 March 2022
 
